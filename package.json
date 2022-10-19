@@ -2,22 +2,19 @@
   "name": "license-reporter",
   "version": "1.5.0",
   "description": "License-reporter gathers license information and reports them in various formats.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "pretest": "eslint --ignore-path .gitignore test/lib/*.js index.js lib/modules/*.js lib/commands/*.js lib/utils/*.js",
-    "test": "jest",
-    "watch-test": "jest --watch",
-    "coverage": "jest --coverage",
-    "prepare": "husky install",
-    "release": "standard-version",
-    "check": "tsc --noEmit true"
+    "build-dist": "tsc",
+    "copy-files": "cp -r ./lib/utils/resources/ ./dist/lib/utils/resources",
+    "pretest": "eslint . --ext .ts",
+    "test": "node --test dist/test/lib/dual.test.js"
   },
   "files": [
     "bin",
     "lib"
   ],
   "engines": {
-    "node": "^16 || ^14 || ^12"
+    "node": "18"
   },
   "repository": {
     "type": "git",
@@ -36,20 +33,14 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@types/node": "^16.11.11",
-    "eslint": "^7.32.0",
-    "eslint-config-semistandard": "^16.0.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "husky": "^7.0.1",
-    "jest": "^27.0.6",
-    "jsdoc": "^3.6.7",
+    "@types/node": "^18.7.20",
+    "@types/recursive-readdir": "^2.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4",
     "proxyquire": "^2.1.3",
-    "rewire": "^5.0.0",
-    "standard-version": "^9.3.1",
-    "typescript": "^4.5.2"
+    "rewire": "^5.0.0"
   },
   "preferGlobal": true,
   "bin": {

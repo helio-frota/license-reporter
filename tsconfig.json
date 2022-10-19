@@ -1,9 +1,38 @@
 {
   "compilerOptions": {
+    "target": "ES2016",
     "allowJs": true,
+    "checkJs": false,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "module": "commonjs", 
+    "noImplicitAny": true,
+    "isolatedModules": true,
     "strict": true,
-    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "sourceMap": false,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "bin/*",
+        "src/*",
+        "lib/*",
+      ]
+    }
   },
-  "include": ["**.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "./src",
+    "./bin",
+    "./test",
+    "./lib",
+    "./*",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
