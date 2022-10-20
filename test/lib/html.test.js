@@ -1,7 +1,5 @@
 'use strict';
 
-/* eslint-env jest */
-
 const html = require('../../lib/utils/html.js');
 
 test('Should generate html from xml', async () => {

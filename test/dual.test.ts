@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert';
 
-import * as dual from '../../src/utils/dual.js';
+import * as dual from '../src/utils/dual.js';
 
 const license = 'MIT';
 const dualLicense = '(MIT OR Apache-2.0)';

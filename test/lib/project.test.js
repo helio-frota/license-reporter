@@ -1,17 +1,15 @@
-/* eslint-disable no-prototype-builtins */
-'use strict';
+import test from 'node:test';
+import assert from 'node:assert';
 
-/* eslint-env jest */
+import * as project from '../../src/utils/project.js';
 
+// eslint-disable-next-line no-undef
 const cwd = process.cwd();
-const project = require('../../lib/utils/project');
 
-test('Checks if project has metadata.', () => {
-  expect.assertions(5);
-  const metaData = project.projectMetaData(cwd);
-  expect(metaData).toBeDefined();
-  expect(metaData.hasOwnProperty('project')).toBeTruthy();
-  expect(metaData.hasOwnProperty('version')).toBeTruthy();
-  expect(metaData.hasOwnProperty('license')).toBeTruthy();
-  expect(metaData.hasOwnProperty('dependencies')).toBeTruthy();
+test('Checks if project has metadata.', async () => {
+  const {name, version, license, dependencies} = await project.readPackageJson(cwd);
+  assert.ok(name !== undefined);
+  assert.ok(version !== undefined);
+  assert.ok(license !== undefined);
+  assert.ok(dependencies !== undefined);
 });

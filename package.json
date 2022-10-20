@@ -7,7 +7,7 @@
     "build-dist": "tsc",
     "copy-files": "cp -r ./lib/utils/resources/ ./dist/lib/utils/resources",
     "pretest": "eslint . --ext .ts",
-    "test": "node --test dist/test/lib/dual.test.js"
+    "test": "npm run build-dist && npm run copy-files && node --test dist/test/lib/dual.test.js dist/test/lib/project.test.js"
   },
   "files": [
     "bin",
