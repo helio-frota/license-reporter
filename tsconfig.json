@@ -1,39 +1,26 @@
 {
   "compilerOptions": {
-    "target": "ES2016",
-    "allowJs": true,
-    "checkJs": false,
-    "outDir": "./dist",
-    "moduleResolution": "node",
-    "module": "commonjs", 
-    "noImplicitAny": true,
-    "isolatedModules": true,
-    "strict": true,
+    "outDir": "dist",
+    "removeComments": true,
+    "target": "ES6",
+    "baseUrl": "./",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "declaration": true,
-    "sourceMap": false,
-    "rootDir": ".",
-    "baseUrl": ".",
-    "paths": {
-      "*": [
-        "*",
-        "bin/*",
-        "src/*",
-        "lib/*",
-      ]
-    }
+    "moduleResolution": "node",
+    "paths": {},
+    "sourceMap": true,
+    "sourceRoot": "/",
+    "alwaysStrict": true,
+    "allowUnreachableCode": false,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
-  "include": [
-    "./src",
-    "./bin",
-    "./test",
-    "./lib",
-    "./*",
-  ],
+  "include": ["./**/*.ts"],
   "exclude": [
-    "node_modules",
+    "node_modules/**/*",
     "dist"
   ]
 }
