@@ -8,7 +8,6 @@
     "moduleResolution": "node",
     "paths": {},
     "sourceMap": true,
-    "sourceRoot": "/",
     "alwaysStrict": true,
     "allowUnreachableCode": false,
     "noImplicitAny": true,
@@ -18,9 +17,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": ["./**/*.ts"],
+  "include": [
+    "src/**/*.ts"
+  ],
   "exclude": [
-    "node_modules/**/*",
+    "node_modules",
     "dist"
   ]
 }

@@ -1,16 +1,11 @@
-'use strict';
+import js2xmlparser from 'js2xmlparser';
 
-const js2xmlparser = require('js2xmlparser');
-const xml2js = require('xml2js');
+import xml2js from 'xml2js';
 
-const toJson = (xml) => {
-  return new Promise((resolve, reject) => {
-    xml2js.parseString(xml, (err, result) => {
-      if (err !== null) return reject(err);
-      resolve(result);
-    });
-  });
-};
+// TODO: see if this can be called outside directly.
+export async function toJson (xml) {
+  return await xml2js.parseStringPromise(xml);
+}
 
 const toJsonArray = (xmls) => {
   const jsons = [];
@@ -49,6 +44,5 @@ const merge = (productName, licenceXmls) => {
 
 module.exports = {
   merge,
-  toJson,
   toJsonArray
 };
